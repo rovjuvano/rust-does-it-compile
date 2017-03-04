@@ -1,7 +1,7 @@
 #[derive(Debug)]
 pub struct MutOrNot(String);
 fn main() {
-    let mut object = { MutOrNot("foo".to_string()) };
+    let object = { MutOrNot("foo".to_string()) };
     object.subject();
 }
 impl MutOrNot {
