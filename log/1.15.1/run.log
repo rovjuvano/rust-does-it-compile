@@ -1,2 +1,2 @@
-Wrapper { object: Object { value: "foobarbaz" } }
+Wrapper { object: Some(Object { value: "foobarbaz" }) }
 Object { value: "foobarbaz" }

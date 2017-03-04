@@ -5,27 +5,34 @@ struct Object {
 }
 #[derive(Debug)]
 struct Wrapper<'a> {
-    object: &'a mut Object,
+    object: Option<&'a mut Object>,
 }
 impl<'a> Wrapper<'a> {
     fn bar(&mut self) {
-        self.object.value.push_str("bar");
+        match self.object {
+            Some(ref mut object) => object.value.push_str("bar"),
+            _ => (),
+        }
     }
     fn baz(&mut self) {
-        self.object.value.push_str("baz");
+        match self.object {
+            Some(ref mut object) => object.value.push_str("baz"),
+            _ => (),
+        }
     }
 }
 fn mutate<'a>(object: &'a mut Object) {
     object.value.push_str("foo");
 }
-fn wrap<'a>(object: &'a mut Object) -> Wrapper<'a> {
-    Wrapper { object: object }
+fn wrap<'a>(object: &'a mut Object, wrapper: &mut Wrapper<'a>) {
+    wrapper.object = Some(object);
 }
 fn main() {
     let mut object = Object { value: "".to_string() };
     mutate(&mut object); // mutate<'a> begins and ends here
     {
-        let mut wrapper = wrap(&mut object); // Wrapper<'a> begins here ...
+        let mut wrapper = Wrapper { object: None }; // Wrapper<'a> begins here ...
+        wrap(&mut object, &mut wrapper);
         wrapper.bar();
         wrapper.baz();
         println!("{:?}", wrapper);
