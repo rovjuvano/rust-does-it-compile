@@ -5,6 +5,10 @@ fn main() {
     subject(object);
 }
 pub fn subject(mut a: MutOrNot) {
-    a.0.push_str("bar");
     println!("subject: {:?}", a);
+    helper(a);
+}
+pub fn helper(mut b: MutOrNot) {
+    b.0.push_str("bar");
+    println!("helper: {:?}", b);
 }
