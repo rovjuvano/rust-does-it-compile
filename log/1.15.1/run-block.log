@@ -1,8 +1,2 @@
-[1m[33mwarning(B[0m[1m: variable does not need to be mutable, #[warn(unused_mut)] on by default(B[0m
- (B[0m[1m[94m--> (B[0msrc/bin/block.rs:6:13(B[0m
-  (B[0m[1m[94m|(B[0m
-[1m[94m6(B[0m (B[0m[1m[94m| (B[0m        let mut a: MutOrNot = object;(B[0m
-  (B[0m[1m[94m| (B[0m            (B[0m[1m[33m^^^^^(B[0m
-
 subject: MutOrNot("foo")
 helper: MutOrNot("foobar")
