@@ -6,7 +6,7 @@ fn main() {
 }
 pub fn subject(a: MutOrNot) {
     println!("subject: {:?}", a);
-    helper(a);
+    helper(&a);
 }
 pub fn helper(mut b: &MutOrNot) {
     b.0.push_str("bar");

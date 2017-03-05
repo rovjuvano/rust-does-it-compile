@@ -1,11 +1,8 @@
-[1m[91merror[E0308](B[0m[1m: mismatched types(B[0m
- (B[0m[1m[94m--> (B[0msrc/bin/function.rs:9:12(B[0m
-  (B[0m[1m[94m|(B[0m
-[1m[94m9(B[0m (B[0m[1m[94m| (B[0m    helper(a);(B[0m
-  (B[0m[1m[94m| (B[0m           (B[0m[1m[91m^(B[0m (B[0m[1m[91mexpected &MutOrNot, found struct `MutOrNot`(B[0m
-  (B[0m[1m[94m|(B[0m
-  (B[0m[1m[94m= (B[0m[1mnote(B[0m: expected type `&MutOrNot`(B[0m
-  (B[0m[1m[94m= (B[0m[1mnote(B[0m:    found type `MutOrNot`(B[0m
+[1m[91merror(B[0m[1m: cannot borrow immutable anonymous field `b.0` as mutable(B[0m
+  (B[0m[1m[94m--> (B[0msrc/bin/function.rs:12:5(B[0m
+   (B[0m[1m[94m|(B[0m
+[1m[94m12(B[0m (B[0m[1m[94m| (B[0m    b.0.push_str("bar");(B[0m
+   (B[0m[1m[94m| (B[0m    (B[0m[1m[91m^^^(B[0m
 
 [1m[91merror(B[0m[1m: aborting due to previous error(B[0m
 
