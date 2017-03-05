@@ -3,14 +3,14 @@ fn main() {
     bar(&mut subject);
     println!("subject={:?}", subject);
 }
-fn bar(string: &mut String) {
+fn bar(mut string: &mut String) {
     string.push_str("bar");
     baz(&mut string);
 }
-fn baz(string: &mut String) {
+fn baz(mut string: &mut String) {
     string.push_str("baz");
     quux(&mut string);
 }
-fn quux(string: &mut String) {
+fn quux(mut string: &mut String) {
     string.push_str("quux");
 }
