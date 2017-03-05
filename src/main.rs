@@ -5,11 +5,11 @@ fn main() {
 }
 fn bar(mut string: &mut String) {
     string.push_str("bar");
-    baz(&mut string);
+    baz(string);
 }
 fn baz(mut string: &mut String) {
     string.push_str("baz");
-    quux(&mut string);
+    quux(string);
 }
 fn quux(mut string: &mut String) {
     string.push_str("quux");
