@@ -1,6 +1,6 @@
 fn main() {
     let subject = &mut "foo".to_string();
-    bar(&mut subject);
+    bar(subject);
     println!("subject={:?}", subject);
 }
 fn bar(mut string: &mut String) {
