@@ -1,13 +1,13 @@
 fn main() {
     let subject = &mut "foo".to_string();
     {
-        let string = subject;
+        let string = &mut subject;
         string.push_str("bar");
         {
-            let string = string;
+            let string = &mut string;
             string.push_str("baz");
             {
-                let string = string;
+                let string = &mut string;
                 string.push_str("quux");
             }
         }

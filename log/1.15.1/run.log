@@ -1,15 +1,31 @@
-[1m[91merror[E0382](B[0m[1m: use of moved value: `subject`(B[0m
-  (B[0m[1m[94m--> (B[0msrc/main.rs:15:30(B[0m
-   (B[0m[1m[94m|(B[0m
-[1m[94m4(B[0m  (B[0m[1m[94m| (B[0m        let string = subject;(B[0m
-   (B[0m[1m[94m| (B[0m            (B[0m[1m[94m------(B[0m (B[0m[1m[94mvalue moved here(B[0m
-[1m[94m...(B[0m
-[1m[94m15(B[0m (B[0m[1m[94m| (B[0m    println!("subject={:?}", subject);(B[0m
-   (B[0m[1m[94m| (B[0m                             (B[0m[1m[91m^^^^^^^(B[0m (B[0m[1m[91mvalue used here after move(B[0m
-   (B[0m[1m[94m|(B[0m
-   (B[0m[1m[94m= (B[0m[1mnote(B[0m: move occurs because `subject` has type `&mut std::string::String`, which does not implement the `Copy` trait(B[0m
+[1m[91merror(B[0m[1m: cannot borrow immutable local variable `subject` as mutable(B[0m
+ (B[0m[1m[94m--> (B[0msrc/main.rs:4:27(B[0m
+  (B[0m[1m[94m|(B[0m
+[1m[94m2(B[0m (B[0m[1m[94m| (B[0m    let subject = &mut "foo".to_string();(B[0m
+  (B[0m[1m[94m| (B[0m        (B[0m[1m[94m-------(B[0m (B[0m[1m[94muse `mut subject` here to make mutable(B[0m
+[1m[94m3(B[0m (B[0m[1m[94m| (B[0m    {(B[0m
+[1m[94m4(B[0m (B[0m[1m[94m| (B[0m        let string = &mut subject;(B[0m
+  (B[0m[1m[94m| (B[0m                          (B[0m[1m[91m^^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
 
-[1m[91merror(B[0m[1m: aborting due to previous error(B[0m
+[1m[91merror(B[0m[1m: cannot borrow immutable local variable `string` as mutable(B[0m
+ (B[0m[1m[94m--> (B[0msrc/main.rs:7:31(B[0m
+  (B[0m[1m[94m|(B[0m
+[1m[94m4(B[0m (B[0m[1m[94m| (B[0m        let string = &mut subject;(B[0m
+  (B[0m[1m[94m| (B[0m            (B[0m[1m[94m------(B[0m (B[0m[1m[94muse `mut string` here to make mutable(B[0m
+[1m[94m...(B[0m
+[1m[94m7(B[0m (B[0m[1m[94m| (B[0m            let string = &mut string;(B[0m
+  (B[0m[1m[94m| (B[0m                              (B[0m[1m[91m^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
+
+[1m[91merror(B[0m[1m: cannot borrow immutable local variable `string` as mutable(B[0m
+  (B[0m[1m[94m--> (B[0msrc/main.rs:10:35(B[0m
+   (B[0m[1m[94m|(B[0m
+[1m[94m7(B[0m  (B[0m[1m[94m| (B[0m            let string = &mut string;(B[0m
+   (B[0m[1m[94m| (B[0m                (B[0m[1m[94m------(B[0m (B[0m[1m[94muse `mut string` here to make mutable(B[0m
+[1m[94m...(B[0m
+[1m[94m10(B[0m (B[0m[1m[94m| (B[0m                let string = &mut string;(B[0m
+   (B[0m[1m[94m| (B[0m                                  (B[0m[1m[91m^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
+
+[1m[91merror(B[0m[1m: aborting due to 3 previous errors(B[0m
 
 (B[m[31m[1merror:(B[m Could not compile `main`.
 (B[m
