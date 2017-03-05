@@ -1,2 +1,12 @@
-subject: MutOrNot("foo")
-helper: MutOrNot("foobar")
+[1m[91merror(B[0m[1m: cannot borrow immutable borrowed content `*self` as mutable(B[0m
+  (B[0m[1m[94m--> (B[0msrc/bin/self.rs:10:9(B[0m
+   (B[0m[1m[94m|(B[0m
+[1m[94m10(B[0m (B[0m[1m[94m| (B[0m        self.helper();(B[0m
+   (B[0m[1m[94m| (B[0m        (B[0m[1m[91m^^^^(B[0m
+
+[1m[91merror(B[0m[1m: aborting due to previous error(B[0m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m

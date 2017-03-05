@@ -4,7 +4,7 @@ fn main() {
     let object = { MutOrNot("foo".to_string()) };
     subject(object);
 }
-pub fn subject(mut a: MutOrNot) {
+pub fn subject(mut a: &MutOrNot) {
     println!("subject: {:?}", a);
     helper(&mut a);
 }
