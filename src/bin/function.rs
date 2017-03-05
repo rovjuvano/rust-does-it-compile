@@ -2,7 +2,7 @@
 pub struct MutOrNot(String);
 fn main() {
     let object = { MutOrNot("foo".to_string()) };
-    subject(object);
+    subject(&object);
 }
 pub fn subject(mut a: &MutOrNot) {
     println!("subject: {:?}", a);
