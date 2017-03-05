@@ -1,16 +1,7 @@
 fn main() {
     let subject = &mut "foo".to_string();
-    bar(subject);
+    subject.push_str("bar");
+    subject.push_str("baz");
+    subject.push_str("quux");
     println!("subject={:?}", subject);
-}
-fn bar(string: &mut String) {
-    string.push_str("bar");
-    baz(string);
-}
-fn baz(string: &mut String) {
-    string.push_str("baz");
-    quux(string);
-}
-fn quux(string: &mut String) {
-    string.push_str("quux");
 }
