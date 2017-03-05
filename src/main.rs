@@ -1,5 +1,5 @@
 fn main() {
-    let mut subject = "foo".to_string();
+    let subject = &mut "foo".to_string();
     bar(&mut subject);
     println!("subject={:?}", subject);
 }
