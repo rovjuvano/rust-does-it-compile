@@ -1,2 +1,12 @@
-subject: MutOrNot("foo")
-helper: MutOrNot("foobar")
+[1m[91merror(B[0m[1m: cannot borrow immutable anonymous field `self.0` as mutable(B[0m
+  (B[0m[1m[94m--> (B[0msrc/bin/self-long.rs:13:9(B[0m
+   (B[0m[1m[94m|(B[0m
+[1m[94m13(B[0m (B[0m[1m[94m| (B[0m        self.0.push_str("bar");(B[0m
+   (B[0m[1m[94m| (B[0m        (B[0m[1m[91m^^^^^^(B[0m
+
+[1m[91merror(B[0m[1m: aborting due to previous error(B[0m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m

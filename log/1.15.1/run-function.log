@@ -1,2 +1,15 @@
-subject: MutOrNot("foo")
-helper: MutOrNot("foobar")
+[1m[91merror[E0308](B[0m[1m: mismatched types(B[0m
+ (B[0m[1m[94m--> (B[0msrc/bin/function.rs:9:12(B[0m
+  (B[0m[1m[94m|(B[0m
+[1m[94m9(B[0m (B[0m[1m[94m| (B[0m    helper(a);(B[0m
+  (B[0m[1m[94m| (B[0m           (B[0m[1m[91m^(B[0m (B[0m[1m[91mexpected &MutOrNot, found struct `MutOrNot`(B[0m
+  (B[0m[1m[94m|(B[0m
+  (B[0m[1m[94m= (B[0m[1mnote(B[0m: expected type `&MutOrNot`(B[0m
+  (B[0m[1m[94m= (B[0m[1mnote(B[0m:    found type `MutOrNot`(B[0m
+
+[1m[91merror(B[0m[1m: aborting due to previous error(B[0m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m
