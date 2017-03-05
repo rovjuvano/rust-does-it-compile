@@ -1,5 +1,5 @@
 fn main() {
-    let subject = &mut "foo".to_string();
+    let mut subject = &mut "foo".to_string();
     {
         let string = &mut subject;
         string.push_str("bar");
