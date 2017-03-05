@@ -1,11 +1,10 @@
-[1m[91merror(B[0m[1m: cannot borrow immutable borrowed content `*self` as mutable(B[0m
-  (B[0m[1m[94m--> (B[0msrc/bin/self-long.rs:10:9(B[0m
-   (B[0m[1m[94m|(B[0m
-[1m[94m8(B[0m  (B[0m[1m[94m| (B[0m    pub fn subject(mut self: &Self) {(B[0m
-   (B[0m[1m[94m| (B[0m                             (B[0m[1m[94m-----(B[0m (B[0m[1m[94muse `&mut Self` here to make mutable(B[0m
-[1m[94m9(B[0m  (B[0m[1m[94m| (B[0m        println!("subject: {:?}", self);(B[0m
-[1m[94m10(B[0m (B[0m[1m[94m| (B[0m        self.helper();(B[0m
-   (B[0m[1m[94m| (B[0m        (B[0m[1m[91m^^^^(B[0m
+[1m[91merror(B[0m[1m: cannot borrow immutable local variable `object` as mutable(B[0m
+ (B[0m[1m[94m--> (B[0msrc/bin/self-long.rs:5:5(B[0m
+  (B[0m[1m[94m|(B[0m
+[1m[94m4(B[0m (B[0m[1m[94m| (B[0m    let object = { MutOrNot("foo".to_string()) };(B[0m
+  (B[0m[1m[94m| (B[0m        (B[0m[1m[94m------(B[0m (B[0m[1m[94muse `mut object` here to make mutable(B[0m
+[1m[94m5(B[0m (B[0m[1m[94m| (B[0m    object.subject();(B[0m
+  (B[0m[1m[94m| (B[0m    (B[0m[1m[91m^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
 
 [1m[91merror(B[0m[1m: aborting due to previous error(B[0m
 
