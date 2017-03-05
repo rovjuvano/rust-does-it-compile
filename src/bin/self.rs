@@ -5,7 +5,7 @@ fn main() {
     object.subject();
 }
 impl MutOrNot {
-    pub fn subject(self) {
+    pub fn subject(mut self) {
         println!("subject: {:?}", self);
         self.helper();
     }

@@ -1,15 +1,2 @@
-[1m[91merror(B[0m[1m: cannot borrow immutable local variable `a` as mutable(B[0m
- (B[0m[1m[94m--> (B[0msrc/bin/block.rs:9:45(B[0m
-  (B[0m[1m[94m|(B[0m
-[1m[94m6(B[0m (B[0m[1m[94m| (B[0m        let a: MutOrNot = object;(B[0m
-  (B[0m[1m[94m| (B[0m            (B[0m[1m[94m-(B[0m (B[0m[1m[94muse `mut a` here to make mutable(B[0m
-[1m[94m...(B[0m
-[1m[94m9(B[0m (B[0m[1m[94m| (B[0m            let mut b: &mut MutOrNot = &mut a;(B[0m
-  (B[0m[1m[94m| (B[0m                                            (B[0m[1m[91m^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
-
-[1m[91merror(B[0m[1m: aborting due to previous error(B[0m
-
-(B[m[31m[1merror:(B[m Could not compile `main`.
-(B[m
-To learn more, run the command again with --verbose.
-(B[m
+subject: MutOrNot("foo")
+helper: MutOrNot("foobar")
