@@ -6,7 +6,7 @@ fn main() {
         let a: MutOrNot = object;
         println!("subject: {:?}", a);
         { // helper
-            let mut b: &mut MutOrNot = &a;
+            let mut b: &mut MutOrNot = &mut a;
             b.0.push_str("bar");
             println!("helper: {:?}", b);
         }
