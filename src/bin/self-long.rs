@@ -9,7 +9,7 @@ impl MutOrNot {
         println!("subject: {:?}", self);
         self.helper();
     }
-    pub fn helper(mut self: &mut Self) {
+    pub fn helper(self: &mut Self) {
         self.0.push_str("bar");
         println!("helper: {:?}", self);
     }
