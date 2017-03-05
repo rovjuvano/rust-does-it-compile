@@ -1,0 +1,24 @@
+[1m[91merror(B[0m[1m: cannot borrow immutable argument `string` as mutable(B[0m
+ (B[0m[1m[94m--> (B[0msrc/main.rs:8:14(B[0m
+  (B[0m[1m[94m|(B[0m
+[1m[94m6(B[0m (B[0m[1m[94m| (B[0mfn bar(string: &mut String) {(B[0m
+  (B[0m[1m[94m| (B[0m       (B[0m[1m[94m------(B[0m (B[0m[1m[94muse `mut string` here to make mutable(B[0m
+[1m[94m7(B[0m (B[0m[1m[94m| (B[0m    string.push_str("bar");(B[0m
+[1m[94m8(B[0m (B[0m[1m[94m| (B[0m    baz(&mut string);(B[0m
+  (B[0m[1m[94m| (B[0m             (B[0m[1m[91m^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
+
+[1m[91merror(B[0m[1m: cannot borrow immutable argument `string` as mutable(B[0m
+  (B[0m[1m[94m--> (B[0msrc/main.rs:12:15(B[0m
+   (B[0m[1m[94m|(B[0m
+[1m[94m10(B[0m (B[0m[1m[94m| (B[0mfn baz(string: &mut String) {(B[0m
+   (B[0m[1m[94m| (B[0m       (B[0m[1m[94m------(B[0m (B[0m[1m[94muse `mut string` here to make mutable(B[0m
+[1m[94m11(B[0m (B[0m[1m[94m| (B[0m    string.push_str("baz");(B[0m
+[1m[94m12(B[0m (B[0m[1m[94m| (B[0m    quux(&mut string);(B[0m
+   (B[0m[1m[94m| (B[0m              (B[0m[1m[91m^^^^^^(B[0m (B[0m[1m[91mcannot borrow mutably(B[0m
+
+[1m[91merror(B[0m[1m: aborting due to 2 previous errors(B[0m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m
