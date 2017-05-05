@@ -1,3 +1,12 @@
-a: "String"
-b: 8
-c: [1, 2, 3]
+[1m[91merror(B[m[1m: cannot borrow immutable borrowed content `*a` as mutable(B[m
+  (B[m[1m[94m--> (B[msrc/main.rs:11:13(B[m
+   (B[m[1m[94m|(B[m
+[1m[94m11(B[m (B[m[1m[94m| (B[m            a.push_str(" appended");(B[m
+   (B[m[1m[94m| (B[m            (B[m[1m[91m^(B[m (B[m[1m[91mcannot borrow as mutable(B[m
+
+[1m[91merror(B[m[1m: aborting due to previous error(B[m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m
