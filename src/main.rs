@@ -6,7 +6,6 @@ struct MyType {
 }
 fn main() {
     let x = MyType { a: "String".to_string(), b: 8u8, c: vec![1, 2, 3] };
-    match x {
-        MyType { a, b, c } => println!("a: {:?}\nb: {:?}\nc: {:?}", a, b, c),
-    };
+    let MyType { a, b, c } = x;
+    println!("a: {:?}\nb: {:?}\nc: {:?}", a, b, c);
 }
