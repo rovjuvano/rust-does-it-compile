@@ -1,3 +1,16 @@
-a: "String"
-b: 8
-c: [1, 2, 3]
+[1m[91merror[E0507](B[m[1m: cannot move out of borrowed content(B[m
+  (B[m[1m[94m--> (B[msrc/main.rs:10:9(B[m
+   (B[m[1m[94m|(B[m
+[1m[94m10(B[m (B[m[1m[94m| (B[m        &MyType { a, b, c } => println!("a: {:?}\nb: {:?}\nc: {:?}", a, b, c),(B[m
+   (B[m[1m[94m| (B[m        (B[m[1m[91m^^^^^^^^^^(B[m[1m[94m-(B[m[1m[91m^^^^^(B[m[1m[94m-(B[m[1m[91m^^(B[m
+   (B[m[1m[94m| (B[m        (B[m[1m[91m|(B[m         (B[m[1m[94m|(B[m     (B[m[1m[94m|(B[m
+   (B[m[1m[94m| (B[m        (B[m[1m[91m|(B[m         (B[m[1m[94m|(B[m     (B[m[1m[94m...and here (use `ref c` or `ref mut c`)(B[m
+   (B[m[1m[94m| (B[m        (B[m[1m[91m|(B[m         (B[m[1m[94mhint: to prevent move, use `ref a` or `ref mut a`(B[m
+   (B[m[1m[94m| (B[m        (B[m[1m[91mcannot move out of borrowed content(B[m
+
+[1m[91merror(B[m[1m: aborting due to previous error(B[m
+
+(B[m[31m[1merror:(B[m Could not compile `main`.
+(B[m
+To learn more, run the command again with --verbose.
+(B[m
