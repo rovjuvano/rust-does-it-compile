@@ -6,7 +6,9 @@ struct MyType {
 }
 fn main() {
     let x = &mut MyType { a: "String".to_string(), b: 8u8, c: vec![1, 2, 3] };
-    let &mut MyType { ref mut a, ref b, ref c } = x;
+    fun(x);
+}
+fn fun(&mut MyType { ref mut a, ref b, ref c }: &mut MyType) {
     a.push_str(" appended");
     println!("a: {:?}\nb: {:?}\nc: {:?}", a, b, c);
 }
