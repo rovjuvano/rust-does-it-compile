@@ -6,6 +6,8 @@ struct MyType {
 }
 fn main() {
     let x = &MyType { a: "String".to_string(), b: 8u8, c: vec![1, 2, 3] };
-    let &MyType { ref a, ref b, ref c } = x;
+    fun(x);
+}
+fn fun(&MyType { ref a, ref b, ref c }: &MyType) {
     println!("a: {:?}\nb: {:?}\nc: {:?}", a, b, c);
 }
